@@ -1,0 +1,37 @@
+{
+  "name": "rfc7235-parser",
+  "version": "0.1.0",
+  "description": "A parser for RFC 7235 HTTP/1.1 Authentication headers",
+  "keywords": [
+    "RFC 2617",
+    "RFC 2069",
+    "RFC7235",
+    "RFC2617",
+    "RFC2069",
+    "HTTP",
+    "Authorization"
+  ],
+  "bugs": "https://github.com/raphinesse/rfc7235-parser/issues",
+  "repository": "github:raphinesse/rfc7235-parser",
+  "license": "MIT",
+  "author": "Raphael von der Grün",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "*.{js,ts}"
+  ],
+  "scripts": {
+    "build": "nearleyc grammar/rfc7235.ne -o grammar.js",
+    "prepare": "npm run build",
+    "pretest": "npm run build",
+    "test": "xo && ava"
+  },
+  "dependencies": {
+    "nearley": "^2.11.0",
+    "nearley-auto-unwrap": "^0.1.0"
+  },
+  "devDependencies": {
+    "ava": "^3.2.0",
+    "xo": "^0.25.3"
+  }
+}
